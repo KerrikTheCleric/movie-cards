@@ -6,7 +6,9 @@ export function App(): ReactElement {
   return (
     <>
       <AddMovie/>
-      <MovieCard/>
+      <MovieCard title="Der Movie Film" genre="Comedy" rating="2" description="Oh no, I made ze bad film."/>
+      <MovieCard title="Moby Dick Rides Again" genre="Science Fiction" rating="4" description="Description which is very long so god help me order or I fear this is the end Captain Ahab."/>
+
     </>
   );
 }

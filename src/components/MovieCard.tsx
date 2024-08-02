@@ -4,19 +4,19 @@ import { useState } from 'react';
 
 import "./MovieCard.css";
 
-export default function AddMovie(): ReactElement {
+export default function AddMovie(props:any): ReactElement {
 
     return (
         <section className="movieCardMainSection roundedComponent">
 
             <ul className="movieCardComponentList">
-                <p className="movieCardComponentListItem">Movie Title</p>
+                <p className="movieCardComponentListItem">{props.title}</p>
                 {/* <span className="invisibleFiller">Filler</span> */}
-                <p className=" movieCardComponentListItem genreText">Science Fiction</p>
+                <p className=" movieCardComponentListItem genreText">{props.genre}</p>
 
-                <p className="movieCardComponentListItem">Description which is very long so god help me order or I fear this is the end captain ahab</p>
+                <p className="movieCardComponentListItem">{props.description}</p>
             </ul>
-            <p className="topRightRating">3/5</p>
+            <p className="topRightRating">{props.rating}/5</p>
             {/* <ul className="movieCardComponentList">
                 <p className="invisibleFiller movieCardComponentListItem">Filler</p>
                 <p className="genreText">Science Fiction</p>
