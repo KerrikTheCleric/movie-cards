@@ -41,20 +41,20 @@ export default function AddMovie(): ReactElement {
       }
 
     return (
-        <section className="mainSection">
+        <section className="addMovieMainSection roundedComponent">
             <form action="">
                 <ul className="addMovieComponentList">
                     <li className="addMovieComponentListItem">
                         <label htmlFor="titleInput">Title</label>
-                        <input type="text" name="" id="titleInput" value={titleInputValue} onChange={handleTitleInputChange}/>
+                        <input className="roundedComponent" type="text" name="" id="titleInput" value={titleInputValue} onChange={handleTitleInputChange}/>
                     </li>
                     <li className="addMovieComponentListItem">
                         <label htmlFor="ratingInput">Rating</label>
                         <input type="range" name="" id="ratingInput" min="0" max="5" value={ratingInputValue} onChange={handleRatingInputChange} />
                     </li>
-                    <li className="addMovieComponentListItem">
+                    <li className="addMovieComponentListItem ">
                         <label htmlFor="genreSelect">Genre</label>
-                        <select name="" id="genreSelect" value={genreInputValue} onChange={handleGenreInputChange}>
+                        <select className="roundedComponent" name="" id="genreSelect" value={genreInputValue} onChange={handleGenreInputChange}>
                             <option value="Action">Action</option>
                             <option value="Adventure">Adventure</option>
                             <option value="Animated">Animated</option>
@@ -73,12 +73,12 @@ export default function AddMovie(): ReactElement {
                     </li>
                     <li className="addMovieComponentListItem">
                     <label htmlFor="descriptionInput">Description</label>
-                    <textarea name="" id="descriptionInput" value={descriptionInputValue} onChange={handleDescriptionInputChange}></textarea>
+                    <textarea className="roundedComponent" name="" id="descriptionInput" value={descriptionInputValue} onChange={handleDescriptionInputChange}></textarea>
                     </li>
 
                 </ul>
-                <button>Clear</button>
-                <button type="button" onClick={() => addButtonEvent()}> Add </button>
+                <button className="roundedComponent">Clear</button>
+                <button className="roundedComponent" type="button" onClick={() => addButtonEvent()}> Add </button>
             </form>
         </section>
     )

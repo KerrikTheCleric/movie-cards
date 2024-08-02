@@ -1,8 +1,9 @@
-.mainSection {
+.addMovieMainSection {
     background-color: rgb(179, 21, 179);
-    border-radius: 10px;
     padding: 10px;
-    
+    border-style: solid;
+    border-color: black;
+    margin-bottom: 10px;
 
     display: grid;
     grid-gap: 10px;
@@ -17,6 +18,10 @@
     display: flex;
     padding-bottom: 5px;
     gap: 40px;
+}
+
+.roundedComponent{
+    border-radius: 5px;
 }
 
 /* .inputLabel{

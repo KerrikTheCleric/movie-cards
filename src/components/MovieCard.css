@@ -1,0 +1,77 @@
+.movieCardMainSection{
+    background-color: rgb(179, 21, 179);
+    padding: 10px;
+    border-style: solid;
+    border-color: black;
+    margin-bottom: 10px;
+
+    display: flex;
+    max-width: 300px;
+    text-wrap: wrap;
+    position: relative;
+}
+
+.movieCardComponentList {
+    padding-left: 0;
+    margin: 0;
+}
+
+.movieCardComponentListItem {
+    display: flex;
+    padding-bottom: 5px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.roundedComponent {
+    border-radius: 5px;
+}
+
+/* .topLeft {
+    position: absolute;
+    top: 0px;
+    left: 16px;
+    font-size: 18px;
+} */
+
+/*.topLeft-second {
+     position: absolute;
+    top: 20px;
+    left: 16px;
+    font-size: 18px; 
+    
+    
+}*/
+
+.genreText{
+    text-wrap: nowrap;
+    position: relative;
+    left: 200px;
+}
+
+/*.invisibleFiller{
+    visibility: hidden;
+}*/
+
+ .topRightRating {
+    position: absolute;
+    margin-top: 10px;
+    top: 0px;
+    right: 16px;
+    font-size: 18px;
+}
+
+/*.topRight-second {
+    position: absolute;
+    top: 20px;
+    right: 16px;
+    font-size: 18px;
+} */
+
+/*.block {
+    width: 50px;
+    background: tomato;
+  }
+  .justify-start {
+    margin-right: auto;
+  }*/
