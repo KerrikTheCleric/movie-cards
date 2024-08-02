@@ -27,31 +27,11 @@
     border-radius: 5px;
 }
 
-/* .topLeft {
-    position: absolute;
-    top: 0px;
-    left: 16px;
-    font-size: 18px;
-} */
-
-/*.topLeft-second {
-     position: absolute;
-    top: 20px;
-    left: 16px;
-    font-size: 18px; 
-    
-    
-}*/
-
 .genreText{
     text-wrap: nowrap;
     position: relative;
     left: 195px;
 }
-
-/*.invisibleFiller{
-    visibility: hidden;
-}*/
 
  .topRightRating {
     position: absolute;
@@ -60,18 +40,3 @@
     right: 16px;
     font-size: 18px;
 }
-
-/*.topRight-second {
-    position: absolute;
-    top: 20px;
-    right: 16px;
-    font-size: 18px;
-} */
-
-/*.block {
-    width: 50px;
-    background: tomato;
-  }
-  .justify-start {
-    margin-right: auto;
-  }*/
