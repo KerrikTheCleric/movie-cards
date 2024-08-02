@@ -7,8 +7,8 @@ import "./AddMovie.css";
 export default function AddMovie(): ReactElement {
 
     const [titleInputValue, setTitleInputValue] = useState('');
-    const [ratingInputValue, setRatingInputValue] = useState('');
-    const [genreInputValue, setGenreInputValue] = useState('');
+    const [ratingInputValue, setRatingInputValue] = useState('3');
+    const [genreInputValue, setGenreInputValue] = useState('Action');
     const [descriptionInputValue, setDescriptionInputValue] = useState('');
 
 
@@ -28,11 +28,16 @@ export default function AddMovie(): ReactElement {
         setDescriptionInputValue(event.target.value);
     };
 
-    function triggerCustomEvent() {
-        console.log(titleInputValue);
-        console.log(ratingInputValue);
-        console.log(genreInputValue);
-        console.log(descriptionInputValue);
+    function addButtonEvent() {
+
+        const movieCard = {
+            title:  titleInputValue,
+            rating: ratingInputValue,
+            genre: genreInputValue,
+            description: descriptionInputValue
+           };
+
+        console.log(movieCard);
       }
 
     return (
@@ -73,7 +78,7 @@ export default function AddMovie(): ReactElement {
 
                 </ul>
                 <button>Clear</button>
-                <button type="button" onClick={() => triggerCustomEvent()}> Add </button>
+                <button type="button" onClick={() => addButtonEvent()}> Add </button>
             </form>
         </section>
     )
