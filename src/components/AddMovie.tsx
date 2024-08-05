@@ -1,10 +1,10 @@
-import { ReactElement } from "react";
-import { useState } from 'react';
+import { ReactElement, useState } from "react";
 import MovieCard from "./MovieCard";
 
-let nextKey = 0;
+let nextKey = 1;
 
 import "./AddMovie.css";
+import { IMovieCardData } from "../interfaces";
 
 export default function AddMovie(): ReactElement {
 
@@ -12,7 +12,9 @@ export default function AddMovie(): ReactElement {
     const [ratingInputValue, setRatingInputValue] = useState('3');
     const [genreInputValue, setGenreInputValue] = useState('Action');
     const [descriptionInputValue, setDescriptionInputValue] = useState('');
-    const [movieCards, setMovieCards] = useState<JSX.Element[]>([]);
+    //const [movieCards, setMovieCards] = useState<JSX.Element[]>([]);
+    const [movieCards2, setMovieCards] = useState<IMovieCardData[]>([]);
+
 
     const handleTitleInputChange = (event: any) => {
         setTitleInputValue(event.target.value);
@@ -32,20 +34,32 @@ export default function AddMovie(): ReactElement {
 
     function addButtonEvent() {
 
-        const movieCardData = {
+        const movieCardData: IMovieCardData = {
             title:  titleInputValue,
-            rating: ratingInputValue,
+            rating: Number(ratingInputValue),
             genre: genreInputValue,
             description: descriptionInputValue
            };
 
         console.log(movieCardData);
-        let newMovieCard = <MovieCard key={nextKey++} title={movieCardData.title}
-            genre={movieCardData.genre} rating={movieCardData.rating}
-            description={movieCardData.description} />
-        setMovieCards([...movieCards, newMovieCard]);
+
+
+        setMovieCards([...movieCards2, movieCardData]);
+
+        let newMovieCard = <MovieCard key={nextKey} movie={movieCardData} onClick={cardClickEvent}
+              />
+        nextKey++;
+        //setMovieCards([...movieCards, newMovieCard]);
       }
 
+    function cardClickEvent(){
+        console.log("Banana")
+    }
+
+    const movieCards = movieCards2.map((movie) =>
+        <MovieCard movie={movie} onClick={cardClickEvent} key={crypto.randomUUID()}/>
+    );
+      
     return (
         <div>
             <section className="addMovieMainSection roundedComponent">
@@ -87,7 +101,9 @@ export default function AddMovie(): ReactElement {
                     <button className="roundedComponent" type="button" onClick={() => addButtonEvent()}> Add </button>
                 </form>
             </section>
-            {movieCards}
+            <ul className="movieCardList">
+                {movieCards}
+            </ul>
         </div>
     )
 }
