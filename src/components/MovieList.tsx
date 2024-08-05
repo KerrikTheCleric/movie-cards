@@ -2,32 +2,20 @@ import { ReactElement } from "react";
 import { IMovieCardData } from "../interfaces";
 import MovieCard from "./MovieCard";
 
-//import "./MovieCard.css";
+interface IMovieListProps {
+    movies: IMovieCardData[];
+    onMovieClick: (movie: IMovieCardData) => void;
+}
 
-export default function MovieList(props: IMovieCardData[]): ReactElement {
+export default function MovieList({ movies, onMovieClick }: IMovieListProps): ReactElement {
 
-    console.log("Props: " + props);
-
-    /*if(props[0] !== null){
-        console.log("Props: " + props[0].genre);
-    }*/
-
-    const names = ["Alice", "Bob", "Charlie"];
-    //const nameListItems = names.map(name => <li key={name}>{name}</li>);
-
-    /*const newMovieCardData: IMovieCardData[] = {
-        [title =]
-    }*/
-
-    const movieCardsToRender = props.map((movie) =>
-        <MovieCard {...movie}  key={crypto.randomUUID() }/>
-    )
+    const movieCardsToRender = movies.map((movie) =>
+        <MovieCard movie={movie} onClick={onMovieClick} key={crypto.randomUUID()} />
+    );
 
     return (
-        <section className="">
-            <ul className="">
-                {movieCardsToRender}
-            </ul>
+        <section>
+            {movieCardsToRender}
         </section>
     )
 }

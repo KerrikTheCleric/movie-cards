@@ -40,13 +40,3 @@
     right: 16px;
     font-size: 18px;
 }
-
-.movieCardList{
-    padding-left: 0;
-}
-
-.addMovieComponentListItem{
-    display: flex;
-    padding-bottom: 5px;
-    gap: 40px;
-}

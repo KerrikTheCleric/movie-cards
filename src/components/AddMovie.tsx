@@ -1,10 +1,7 @@
 import { ReactElement, useState } from "react";
-import MovieCard from "./MovieCard";
-
-let nextKey = 1;
-
 import "./AddMovie.css";
 import { IMovieCardData } from "../interfaces";
+import MovieList from "./MovieList";
 
 export default function AddMovie(): ReactElement {
 
@@ -12,8 +9,7 @@ export default function AddMovie(): ReactElement {
     const [ratingInputValue, setRatingInputValue] = useState('3');
     const [genreInputValue, setGenreInputValue] = useState('Action');
     const [descriptionInputValue, setDescriptionInputValue] = useState('');
-    //const [movieCards, setMovieCards] = useState<JSX.Element[]>([]);
-    const [movieCards2, setMovieCards] = useState<IMovieCardData[]>([]);
+    const [movieCards, setMovieCards] = useState<IMovieCardData[]>([]);
 
 
     const handleTitleInputChange = (event: any) => {
@@ -41,24 +37,12 @@ export default function AddMovie(): ReactElement {
             description: descriptionInputValue
            };
 
-        console.log(movieCardData);
-
-
-        setMovieCards([...movieCards2, movieCardData]);
-
-        let newMovieCard = <MovieCard key={nextKey} movie={movieCardData} onClick={cardClickEvent}
-              />
-        nextKey++;
-        //setMovieCards([...movieCards, newMovieCard]);
+        setMovieCards([...movieCards, movieCardData]);
       }
 
     function cardClickEvent(){
         console.log("Banana")
     }
-
-    const movieCards = movieCards2.map((movie) =>
-        <MovieCard movie={movie} onClick={cardClickEvent} key={crypto.randomUUID()}/>
-    );
       
     return (
         <div>
@@ -101,9 +85,7 @@ export default function AddMovie(): ReactElement {
                     <button className="roundedComponent" type="button" onClick={() => addButtonEvent()}> Add </button>
                 </form>
             </section>
-            <ul className="movieCardList">
-                {movieCards}
-            </ul>
+            <MovieList movies={movieCards} onMovieClick={cardClickEvent} />
         </div>
     )
 }
