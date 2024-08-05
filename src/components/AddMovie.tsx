@@ -39,9 +39,10 @@ export default function AddMovie(): ReactElement {
 
         setMovieCards([...movieCards, movieCardData]);
       }
+    
 
-    function cardClickEvent(){
-        console.log("Banana")
+    function cardClickEvent(movie: IMovieCardData){
+        setMovieCards(movieCards.filter((m) => m !== movie));
     }
       
     return (
